@@ -35,16 +35,10 @@ class StoryBrain {
   }
 
   void nextStory(int choiceNumber) {
-    if (_storyIndex == 0 && choiceNumber == 1) {
-      _storyIndex = 1;
-    } else if (_storyIndex == 0 && choiceNumber == 2) {
-      _storyIndex = 2;
-    } else if (_storyIndex == 1 && choiceNumber == 1) {
-      _storyIndex = 2;
-    } else if (_storyIndex == 1 && choiceNumber == 2) {
-      _storyIndex = 3;
-    } else {
+    if (_storyIndex >= _storyData.length - 1) {
       restart();
+    } else {
+      _storyIndex++;
     }
   }
 
